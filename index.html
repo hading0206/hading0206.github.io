@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+  <title>WEB1 - Welcome</title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="css/reset.css" rel="stylesheet" type="text/css"/>
+  <script src="js/fetch.js"></script>
+  <script>
+    var Links = {
+
+setColor:function(color){
+  var alist = document.querySelectorAll('a');
+  var i = 0;
+  while(i < alist.length){
+    alist[i].style.color = color;
+    i = i + 1;
+  }
+}
+} 
+var borderLinks = {
+setBorderColor:function(color){
+  var border_list = document.querySelectorAll('.border');
+  var a = 0;
+  while(a < border_list.length){
+    border_list[a].style.borderColor = color;
+    a = a + 1;
+  }
+}
+}
+var Body = {
+setColor:function (color){
+  document.querySelector('body').style.color = color;
+},
+setBackgroundColor:function (color){
+  document.querySelector('body').style.backgroundColor = color;
+},
+setBorderColor:function (color){
+  document.querySelector('.border').style.borderColor = color;
+}
+}
+function nightDayHandler(self){
+var target = document.querySelector('body');
+if(self.value === 'night'){
+  Body.setBackgroundColor('black');
+  Body.setColor('white');
+  self.value = 'day';
+  Links.setColor('powderblue');
+  borderLinks.setBorderColor('white');
+  document.querySelector('#night_day').style.color = "blue";  
+} else {
+  Body.setBackgroundColor('white');
+  Body.setColor('black');
+  Body.setBorderColor('black')
+  self.value = 'night';
+  Links.setColor('blue');
+  borderLinks.setBorderColor('black');
+  document.querySelector('#night_day').style.color = "black";  
+ 
+}
+}
+
+  </script>
+  
+
+  <style>
+    @font-face {
+      font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}   
+    * { font-family:'IBMPlexSansKR-Regular', serif }
+    a {
+      text-decoration:none;
+    }
+    #header {
+      border:2px solid black;
+      border-bottom:none;
+    }
+    
+    #main-h1 {
+      text-align:center;
+      padding-top:10px;
+      padding-bottom:10px;
+      margin:0px 0px -2px 0px;
+      border:2px solid black;             
+    }
+    #wrap {
+      display:grid;
+      grid-template-columns:20% 1fr;
+      border:2px solid black;
+      border-top:none;
+    }
+
+    #sidebar {
+      height:100%;
+      border-right:2px solid black;
+  
+    }
+    #main-content {
+      padding:0px 0px 0px 20px;
+    
+    }
+    #sidebar li{
+      width:80%;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    #explain img {
+      width:10%;
+    }
+  </style>
+</head>
+<body>
+  <div id="header" class="border">
+  <input id="night_day" type="button" value="night" onclick="
+   
+   nightDayHandler(this);
+ ">
+ </div>
+  <h1 id="main-h1" class="border"><a href="#!welcome" onclick="fetchPage('text/welcome.txt')">WEB</a></h1>
+  
+  <div id="wrap"class="border">
+    <div id="sidebar"class="border">
+      <ol id="nav"></ol>
+    </div>
+  <div id="main-content">
+
+    
+  </div></div>
+  <script>
+  function fetchPage(name){
+    fetch(name).then(function(response){
+        response.text().then(function(text){
+          document.querySelector('#main-content').innerHTML = text;
+        })
+      });
+      
+
+  }
+  if(location.hash){
+    fetchPage('text/'+location.hash.substr(2)+".txt");
+} else {
+  fetchPage('text/welcome.txt')
+}
+  fetch('text/list.txt').then(function(response){
+        response.text().then(function(text){
+        var items = text.split('/')
+        var items1 = items[0].split(',')
+        var items2 = items[1].split(',')
+        var i = 0
+        var tags = '';
+        var extension = ".txt"
+        while(i<items1.length) {
+          var item = items1[i]
+          var nameitem = items2[i]
+          item = item.trim();
+          var fetchitem = item + extension;
+          var tag = `<li><a href="#!`+item+`" onclick="fetchPage('text/`+fetchitem+`');">`+nameitem+`</a></li>`;
+          tags = tags + tag;
+          i = i + 1;
+        }
+
+        document.querySelector('#nav').innerHTML = tags;
+        })
+      });
+     // list.txt : html1.html2/HTML이란?.HTML이 중요한 이유
+// <ol> <li a href="item" fetchPage fetchitem>nameitem</li></ol>
+  </script>
+</body>
+</html>
+

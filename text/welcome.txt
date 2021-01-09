@@ -1,0 +1,22 @@
+<div id="explain">
+<div id="explain-frontend">
+				<h2> Web - Frontend </h2>
+				<img src="../image/htmlcssjs.png" alt="html, css, js logo">
+        <p> 이 사이트는, 웹 프론트엔드에 대한 것들을 소개하고, 설명해드리는 사이트입니다! 제가 아직 학생이고, 배워가는 단계이니 실수가 있더라도 고운 말투로 피드백 해주시면 감사하겠습니다 :) </p>
+        </div>
+        <div id="explain-html">
+          <h2> HTML </h2>
+          <img src="../image/html.png" alt="html logo">
+          <p>HTML이란 웹을 구성하는 요소들을 만드는 언어이며, 웹 구축에 가장 기본이 되는 언어이고 배우기 쉬운 언어에 속하니 맨 처음으로 배워 볼 것입니다! 아, 참. HTML은 프로그래밍 언어가 아닙니다! </p>
+          </div>
+          <div id="explain-css">
+          <h2> CSS </h2>
+          <img src="../image/css.png" alt="css logo">
+          <p> CSS란 웹을 꾸며주는 언어이며, HTML, JS와 함께 웹의 기본적인 언어들입니다. CSS를 배우면 이 사이트처럼 예쁜 사이트를 만들 수 있을거에요! </p>
+          </div>
+          <div id="explain-js">
+          <h2>JavaScript</h2>
+          <img src="../image/js.png">
+          <p>JavaScript란 웹 페이지의 기능들을 담당하는 언어입니다! 조금은 어려울 수 있지만, 열심히 따라오면 할 수 있을거에요!</p>
+          </div>
+          </div>

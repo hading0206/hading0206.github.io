@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\Bitnami\\wampstack-8.0.0-0\\apache2\\htdocs\\web\\image"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\Bitnami\\wampstack-8.0.0-0\\apache2\\htdocs\\web\\js"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\Bitnami\\wampstack-8.0.0-0\\apache2\\htdocs\\web\\text"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\Bitnami\\wampstack-8.0.0-0\\apache2\\htdocs\\web\\css"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\Bitnami\\wampstack-8.0.0-0\\apache2\\htdocs\\web\\html"
+		}
+	],
+	"settings": {}
+}
