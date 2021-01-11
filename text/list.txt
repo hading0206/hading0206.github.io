@@ -1,1 +1,1 @@
-html1,html2,html3,html4,html5/HTML이 중요한 이유,HTML이란?,1,2,3
+welcome,new1,new2,html1,html2/Main Page,코딩을 배워야 하는 이유,준비해야 할 것들,HTML을 알아보자,HTML의 문법을 알아보자
